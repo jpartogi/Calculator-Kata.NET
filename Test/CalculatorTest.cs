@@ -1,29 +1,30 @@
 ﻿namespace Test
 {
     using Calculator;
-    using NUnit.Framework;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+    [TestClass]
     public class CalculatorTest
     {
-        [Test]
+
+        [TestMethod]
         public void EmptyStringReturns0()
         {
             Calculator calc = new Calculator();
 
             int result = calc.Add("");
 
-            Assert.That(result, Is.EqualTo(0));
+            Assert.AreEqual(result, 0);
         }
 
-        [Test]
+        [TestMethod]
         public void OneReturnsNumber()
         {
             Calculator calc = new Calculator();
 
             int result = calc.Add("1");
 
-            Assert.That(result, Is.EqualTo(1));
+            Assert.AreEqual(result, 1);
         }
     }
 }
